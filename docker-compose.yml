@@ -2,12 +2,12 @@ version: "3.8"
 services:
   radius:
     hostname: radius
-    image: nicolonsky-freeradius-prod
+    image: freeradius/freeradius-server
     build:
       context: .
       dockerfile: Dockerfile
     environment:
-      - TZ=Europe/Zurich
+      - TZ=America/Los_Angeles
     restart: always
     ports:
       - "1812-1813:1812-1813/udp"
